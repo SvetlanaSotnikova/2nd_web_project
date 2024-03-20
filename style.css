@@ -186,22 +186,20 @@ button:hover {
     max-width  : 466px;
 }
 
-/* закончить */
 .play {
     position: absolute;
-    top     : 0%;
-    left    : 0%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-40%, -52%);
     fill    : #f25822;
 }
 
 .svg_ellipse {
     position     : relative;
-    stroke       : #ddd;
-    /* display   : block; */
 }
 
 .play_btn .button {
-    /* display   : block; */
+    position: relative;
     border       : none;
     border-radius: 50px;
     width        : 140px;
@@ -209,6 +207,7 @@ button:hover {
     display      : inline-flex;
     align-items  : center;
     gap          : 15px;
+    background-color: #fff;
 }
 
 .button .btn_text {
@@ -283,10 +282,24 @@ button:hover {
 
 }
 
+.aboutus_background {
+    position: relative;
+    width: 100%; /* Чтобы фон занимал всю ширину экрана */
+    overflow: hidden; 
+}
+
 .aboutus_background svg {
-    stroke-width: 2px;
-    stroke      : #f0f0f0;
-    position    : relative;
+    width: 100%;
+    height: 100%;
+    stroke: none; /* Убираем обводку линий */
+}
+
+.svg_wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .aboutus_group .title {
@@ -308,7 +321,7 @@ button:hover {
     margin-bottom: 35px;
 }
 
-.aboutus_content .main_btn button {
+.aboutus_content .main_btn, button {
     font-family  : var(--font-family);
     font-weight  : 400;
     font-size    : 15px;
@@ -337,6 +350,10 @@ img {
     max-width : 100%;
     max-height: 100%;
     border    : none;
+}
+
+.aboutus_page {
+    position: relative;
 }
 
 .features_item1_box .icon_1 {
@@ -723,6 +740,127 @@ button {
     margin-bottom: 100px;
 }
 
+.contact_group h1 {
+    font-family  : var(--font-family);
+    font-weight  : 400;
+    font-size    : 45px;
+    line-height  : 150%;
+    color        : #000;
+    margin-bottom: 3px;
+}
+
+.contact_group p {
+    font-family  : var(--font3);
+    font-weight  : 400;
+    font-size    : 16px;
+    line-height  : 150%;
+    color        : #666;
+    max-width    : 460px;
+    margin-bottom: 55px;
+}
+
+.web_input input[type="url"] {
+    font-family  : var(--second-family);
+    font-weight  : 400;
+    font-size    : 11px;
+    line-height  : 150%;
+    color        : #666;
+    width        : 198.5px;
+    height       : 50px;
+    border       : none;
+    background   : #eee;
+    padding      : 0px 20px 0px;
+    border-radius: 50px 0px 0px 50px;
+}
+
+.email input[type="email"] {
+    font-family  : var(--second-family);
+    font-weight  : 400;
+    font-size    : 11px;
+    line-height  : 150%;
+    color        : #666;
+    width        : 198.5px;
+    height       : 50px;
+    border       : none;
+    background   : #eee;
+    padding      : 0px 20px 0px;
+    border-radius: 0px 50px 50px 0px;
+}
+
+.box_email .border {
+    border      : 1.50px solid #ccc;
+    /* width    : 50px; */
+    height      : 48px;
+    /* transform: rotate(-90deg); */
+}
+
+.box_email button,
+.main_btn {
+    background : #f25822;
+    border     : none;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size  : 13px;
+    line-height: 150%;
+    color      : #fffdfd;
+}
+
+.box_email {
+    display    : inline-flex;
+    align-items: center;
+    flex-wrap  : nowrap
+}
+
+.email_form form {
+    display  : flex;
+    flex-wrap: wrap;
+    gap      : 30px;
+}
+
+.contact_group {
+    position: absolute;
+    z-index       : 1; 
+    transform     : translateX(5%);
+}
+
+.contact {
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    flex-wrap      : wrap;
+}
+
+.rel {
+    position: relative;
+    transform     : translateX(85%); 
+}
+
+.rel img {
+    width : 100%;
+    height: 100%;
+}
+
+.contact_page {
+    position: relative;
+    max-width: 1920px;
+}
+@media screen and (max-width: 2060px){
+  
+
+    .contact {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .contact_group .rel .contact_page {
+        position: static;
+        transform: none;
+        z-index: auto;
+    }
+}
 
 @media screen and (max-width: 1198px) {
     .header {
@@ -736,4 +874,20 @@ button {
         /* flex-direction: column; */
     }
 
+    .contact {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap           : 30px;
+    }
+
+    .contact_group, .rel {
+        position: static;
+        transform: none;
+        z-index: auto;
+    }
+
 }
+
