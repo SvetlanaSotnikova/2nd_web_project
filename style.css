@@ -1183,11 +1183,12 @@ button {
 .slider-container {
     overflow: hidden;
     position: relative;
-    width: 100%; /* Занимать всю доступную ширину */
+    /* width: 1920px; Занимать всю доступную ширину */
     /* max-width: 800px; Максимальная ширина слайдера */
 }
 
 .slides {
+    overflow: hidden;
     display: flex;
     /* Размещаем слайды в строку */
     justify-content: center;
@@ -1240,6 +1241,58 @@ button {
     background-color: #f25822;
 }
 
+.circle_footer {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: border-radius 0.3s ease, background-color 0.3s ease;
+}
+
+.f {
+    border-radius: 100%;
+    background-color: #f25822;
+}
+
+.circle_footer:hover {
+    border-radius: 100%;
+    background-color: #f25822;
+    fill: #fff;
+}
+
+.circle_footer:hover svg path {
+    fill: #ffffff; /* Цвет заливки при наведении */
+}
+
+.logo_footer {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+
+.logo_footer .logo_text {
+    font-size: 28px;
+}
+
+.social_links__footer {
+    display: flex;
+    gap: 15px;
+}
+
+.footer_description p {
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    color: #666;
+    padding-top: 50px;
+    padding-bottom: 40px;
+}
+
+.footer_description {
+    max-width: 270px;
+}
 
 @media screen and (max-width: 2060px) {
 
