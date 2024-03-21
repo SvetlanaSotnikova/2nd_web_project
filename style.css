@@ -975,7 +975,7 @@ button {
     align-items: center;
     flex-wrap: wrap;
     max-width: 1170px;
-    height: 800px;
+    min-height: 800px;
     padding: 15px;
 }
 
@@ -1109,14 +1109,16 @@ button {
     color: #000;
 }
 
-.blog_box .box_group p {
+.blog_box .box_group .text_p {
     font-family: var(--second-family);
     font-weight: 400;
     font-size: 15px;
     line-height: 150%;
     color: #666;
+    padding-bottom: 26px;
 }
-.blog_box .box_group .read_more button{
+
+.blog_box .box_group .read_more button {
     font-family: var(--font-family);
     font-weight: 400;
     font-size: 11px;
@@ -1127,11 +1129,19 @@ button {
     border: none;
     background-color: #fff;
     border-radius: 0%;
+    text-align: left;
+}
+
+.blog_box .box_group .read_more button:hover {
+    box-shadow: none;
 }
 
 .blog_meta {
     display: flex;
     gap: 35px;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    padding-bottom: 22px;
 }
 
 .blog_meta .icon {
@@ -1143,10 +1153,93 @@ button {
 .blog_box {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 30px;
     max-width: 770px;
     max-height: 330px;
 }
+
+.box_group {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 340px;
+}
+
+.blog_meta .icon p {
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 150%;
+    color: #888;
+}
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Установка высоты на весь экран */
+}
+
+.slider-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%; /* Занимать всю доступную ширину */
+    /* max-width: 800px; Максимальная ширина слайдера */
+}
+
+.slides {
+    display: flex;
+    /* Размещаем слайды в строку */
+    justify-content: center;
+    scroll-snap-type: x mandatory;
+    /* Прокрутка останавливается на каждом слайде */
+    gap: 30px;
+    /* Устанавливаем расстояние между слайдами */
+}
+
+.slide {
+    display: flex;
+    scroll-snap-align: start;
+    flex-direction: column;
+
+}
+
+
+
+.slide.selected {
+    opacity: 1;
+    /* Выбранный слайд будет полностью видимым */
+}
+
+.slide:nth-child(2n+1) {
+    margin-left: 0;
+    /* Убираем отступ у нечетных слайдов */
+}
+
+.slide:nth-child(2n) {
+    margin-right: 0;
+    /* Убираем отступ у четных слайдов */
+}
+
+.dots {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #f25822;
+}
+
 
 @media screen and (max-width: 2060px) {
 
